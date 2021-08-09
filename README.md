@@ -1,4 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
 ![](https://img.shields.io/badge/Academic-blue)
 ![](https://img.shields.io/badge/HTML-red)
 ![](https://img.shields.io/badge/JavaScript-yellow)
@@ -32,7 +31,6 @@ To get a local copy running follow this steps!
 👤 *Gabriel Rendon*
 
 - GitHub: [@gabrielyea](https://github.com/gabrielyea)
-
 
 ## 🤝 Contributing
 
