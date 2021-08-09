@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gabrielyea/math-magicians/static/css/main.a617e044.chunk.css",
+    "main.js": "/gabrielyea/math-magicians/static/js/main.e9c59b53.chunk.js",
+    "main.js.map": "/gabrielyea/math-magicians/static/js/main.e9c59b53.chunk.js.map",
+    "runtime-main.js": "/gabrielyea/math-magicians/static/js/runtime-main.74543353.js",
+    "runtime-main.js.map": "/gabrielyea/math-magicians/static/js/runtime-main.74543353.js.map",
+    "static/js/2.b9942053.chunk.js": "/gabrielyea/math-magicians/static/js/2.b9942053.chunk.js",
+    "static/js/2.b9942053.chunk.js.map": "/gabrielyea/math-magicians/static/js/2.b9942053.chunk.js.map",
+    "static/js/3.f225095d.chunk.js": "/gabrielyea/math-magicians/static/js/3.f225095d.chunk.js",
+    "static/js/3.f225095d.chunk.js.map": "/gabrielyea/math-magicians/static/js/3.f225095d.chunk.js.map",
+    "index.html": "/gabrielyea/math-magicians/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/gabrielyea/math-magicians/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.b9942053.chunk.js.LICENSE.txt": "/gabrielyea/math-magicians/static/js/2.b9942053.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/gabrielyea/math-magicians/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74543353.js",
+    "static/js/2.b9942053.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.e9c59b53.chunk.js"
+  ]
+}
