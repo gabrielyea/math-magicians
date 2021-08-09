@@ -12,8 +12,6 @@ basic math operations.
 You can see my page live here: 
 [Check it out!](https://gabrielyea.github.io/math-magicians/)
 
-# Screenshots
-![screenshot]()
 
 ## Built With 🔨
 - HTML
