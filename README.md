@@ -1,18 +1,16 @@
-[](https://img.shields.io/badge/Microverse-blueviolet)
 ![](https://img.shields.io/badge/Academic-blue)
 ![](https://img.shields.io/badge/HTML-red)
 ![](https://img.shields.io/badge/JavaScript-yellow)
 ![](https://img.shields.io/badge/SCSS-pink)
 
-# Math Magicians - React project
-> This application is a calculator app that allow us to do simple math operations.
+# React Math magicians.
+> Math magicians is a simple calculator app that allows us to do 
+basic math operations.
 
 ## Live Demo
 You can see my page live here: 
-[Check it out!](https://gabrielyea.github.io/math-magicians/)
+- [Check it out!](https://gabrielyea.github.io/math-magicians/)
 
-# Screenshots
-![screenshot]()
 
 ## Built With 🔨
 - HTML
@@ -20,33 +18,33 @@ You can see my page live here:
 - javaScript
 - React
 
-# Getting Started with Create React App
+## Getting Started
+To get a local copy running follow this steps!
+- Clone this repo.
+- `npm install` to install the packages
+- `npm run start` to build dist files and run local server.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Author
 
-### `npm start`
+👤 *Gabriel Rendon*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🤝 Contributing
 
-### `npm test`
+Contributions, issues, and feature requests are welcome!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!--Feel free to check the [issues page](../../issues/).-->
 
-### `npm run build`
+## Show your support
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Give a ⭐️ if you like this project!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!--## Acknowledgments-->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
