@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+  row-gap: 0;
+  margin: 0;
+  padding: 0;
+  grid-template-areas:
+    'dis dis dis dis'
+    'spe spe spe ope'
+    'num num num ope'
+    'num num num ope'
+    'num num num ope'
+    'dot zero zero ope';
+
+  .display-container {
+    display: grid;
+    grid-area: dis;
+  }
+
+  .special-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: spe;
+  }
+
+  .numbers-container {
+    display: grid;
+    direction: rtl;
+    list-style: none;
+    grid-area: num;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'dot zero zero ';
+
+    button {
+      width: 100%;
+    }
+
+    button.btn-0 {
+      grid-area: zero;
+      grid-row: 4;
+    }
+  }
+
+  .operator-container {
+    display: grid;
+    grid-area: ope;
+  }
+}
