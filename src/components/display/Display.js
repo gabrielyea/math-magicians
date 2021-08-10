@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import './displayStyle.scss';
 
 export default function Display({ number }) {
   return (
     <div
-      className="display"
+      className="display-container"
       value={number}
     >
       {number}

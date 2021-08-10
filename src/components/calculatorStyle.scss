@@ -8,8 +8,11 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0;
   row-gap: 0;
-  margin: 0;
+  margin: auto;
+  margin-top: 100px;
   padding: 0;
+  width: 500px;
+  background-color: white;
   grid-template-areas:
     'dis dis dis dis'
     'spe spe spe ope'
@@ -50,5 +53,10 @@
   .operator-container {
     display: grid;
     grid-area: ope;
+
+    button {
+      background-color: orange;
+      color: black;
+    }
   }
 }
