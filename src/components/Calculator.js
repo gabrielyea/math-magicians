@@ -9,7 +9,7 @@ export default class Calculator extends React.Component {
     super(props);
     this.state = {
       currentValue: '0',
-      numbers: Array.from(Array(10).keys()),
+      numbers: Array.from(Array(10).keys()).reverse(),
       special: ['AC', '+/-', '%'],
       operators: ['/', '*', '-', '+', '='],
       decimalDot: '.',
@@ -25,7 +25,7 @@ export default class Calculator extends React.Component {
     const {
       numbers, decimalDot, special, operators, currentValue,
     } = this.state;
-    const numBtns = numbers.reverse().map((num) => (
+    const numBtns = numbers.map((num) => (
       <CalculatorButton
         key={num}
         number={num.toString()}
