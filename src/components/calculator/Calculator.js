@@ -21,6 +21,13 @@ export default class Calculator extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState !== this.state) {
+      return true;
+    }
+    return false;
+  }
+
   clickHandler = (e) => {
     this.setCalculatorResult(e.target.value);
   }
