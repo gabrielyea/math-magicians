@@ -27,7 +27,6 @@ To get a local copy running follow this steps!
 - `npm run start` to build dist files and run local server.
 
 
-
 ## Author
 
 👤 *Gabriel Rendon*
