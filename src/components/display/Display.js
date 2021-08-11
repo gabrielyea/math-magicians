@@ -20,14 +20,3 @@ export default class Display extends React.Component {
 Display.propTypes = {
   number: PropTypes.string.isRequired,
 };
-
-// export default function Display({ number }) {
-//   return (
-//     <div
-//       className="display-container"
-//       value={number}
-//     >
-//       {number}
-//     </div>
-//   );
-// }
