@@ -10,7 +10,7 @@ export default class Calculator extends React.Component {
       currentValue: '0',
       numbers: Array.from(Array(10).keys()).reverse(),
       special: ['AC', '+/-', '%'],
-      operators: ['/', '*', '-', '+', '='],
+      operators: ['÷', '*', '-', '+', '='],
       decimalDot: '.',
     };
     this.clickHandler = this.clickHandler.bind(this);
