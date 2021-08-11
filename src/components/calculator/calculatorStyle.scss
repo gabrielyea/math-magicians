@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+@mixin buttonStyle {
+  border: 1px solid rgba(156, 156, 156, 0.288);
+  height: 50px;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -30,6 +35,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-area: spe;
+
+    button {
+      @include buttonStyle;
+    }
   }
 
   .numbers-container {
@@ -41,6 +50,8 @@
     grid-template-areas: 'dot zero zero ';
 
     button {
+      @include buttonStyle;
+
       width: 100%;
     }
 
@@ -53,8 +64,11 @@
   .operator-container {
     display: grid;
     grid-area: ope;
+    height: 50px;
 
     button {
+      @include buttonStyle;
+
       background-color: orange;
       color: black;
     }
