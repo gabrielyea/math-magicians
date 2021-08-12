@@ -1,101 +1,84 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
 import './calculatorStyle.scss';
 import calculate from '../../logic/calculate';
 import CalculatorButton from '../buttons/CalculatorBtn';
 import Display from '../display/Display';
 
-export default class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numbers: Array.from(Array(10).keys()).reverse(),
-      special: ['AC', '+/-', '%'],
-      operators: ['÷', 'x', '-', '+', '='],
-      decimalDot: '.',
-      currentOp: {
-        total: null,
-        next: null,
-        operation: null,
-      },
-    };
-    this.clickHandler = this.clickHandler.bind(this);
-  }
+export default function Calculator() {
+  const [currentOp, setOperation] = useState({ total: 0, next: null, operation: null });
+  const [delegate, setDelegate] = useState(0);
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextState !== this.state) {
-      return true;
-    }
-    return false;
-  }
+  const numberKeys = Array.from(Array(10).keys()).reverse();
+  const specialKeys = ['AC', '+/-', '%'];
+  const operatorKeys = ['÷', 'x', '-', '+', '='];
+  const decimalKey = ['.'];
 
-  clickHandler = (e) => {
-    this.setCalculatorResult(e.target.value);
-  }
-
-  setCalculatorResult = (value) => {
-    const { currentOp } = this.state;
-    const results = calculate(currentOp, value);
-    this.setState({ currentOp: this.updateCurrentOperation(results) });
-  }
-
-  updateCurrentOperation = ({ next, total, operation }) => {
-    const { currentOp } = this.state;
+  const updateCurrentOperation = ({ total, next, operation }) => {
+    const op = currentOp;
     if (total || total === null) {
-      currentOp.total = total;
+      op.total = total;
     }
     if (next || next === null) {
-      currentOp.next = next;
+      op.next = next;
     }
     if (operation || operation === null) {
-      currentOp.operation = operation;
+      op.operation = operation;
     }
-    return currentOp;
-  }
+    return op;
+  };
 
-  render() {
-    const {
-      numbers, decimalDot, special, operators, currentOp,
-    } = this.state;
-    const numBtns = numbers.map((num) => (
+  const cleanState = () => {
+    setOperation({ next: 0, total: null, operation: null });
+    setDelegate(0);
+  };
+
+  const setCalculatorResult = (value) => {
+    const op = currentOp;
+    try {
+      const results = calculate(op, value);
+      const { next, total, operation } = updateCurrentOperation(results);
+      setOperation({ next, total, operation });
+    } catch (error) {
+      setOperation({ next: 'error', total: null, operation: null });
+      setDelegate(1);
+    }
+  };
+
+  const doFunction = (param) => {
+    const delegateFunctions = [setCalculatorResult, cleanState];
+
+    delegateFunctions[delegate](param);
+  };
+
+  const clickHandler = (e) => {
+    doFunction(e.target.value);
+  };
+
+  const createButtons = (buttonCollection) => {
+    const btns = buttonCollection.map((num) => (
       <CalculatorButton
         key={num}
         number={num.toString()}
-        clickHandler={this.clickHandler}
+        clickHandler={clickHandler}
       />
     ));
-    const specialBtns = special.map((btn) => (
-      <CalculatorButton
-        key={btn}
-        number={btn.toString()}
-        clickHandler={this.clickHandler}
-      />
-    ));
-    const operatorBtns = operators.map((btn) => (
-      <CalculatorButton
-        key={btn}
-        number={btn.toString()}
-        clickHandler={this.clickHandler}
-      />
-    ));
-    return (
-      <div className="main-container">
-        <Display number={currentOp} />
-        <ul className="special-container">
-          {specialBtns}
-        </ul>
-        <ul className="numbers-container">
-          {numBtns}
-          <CalculatorButton
-            className="dot-btn"
-            type="button"
-            clickHandler={this.clickHandler}
-            number={decimalDot}
-          />
-        </ul>
-        <ul className="operator-container">
-          {operatorBtns}
-        </ul>
-      </div>
-    );
-  }
+    return btns;
+  };
+
+  return (
+    <div className="main-container">
+      <Display value={currentOp} />
+      <ul className="special-container">
+        {createButtons(specialKeys)}
+      </ul>
+      <ul className="numbers-container">
+        {createButtons(numberKeys)}
+        {createButtons(decimalKey)}
+      </ul>
+      <ul className="operator-container">
+        {createButtons(operatorKeys)}
+      </ul>
+    </div>
+  );
 }
