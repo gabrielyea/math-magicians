@@ -1,28 +1,60 @@
 import React from 'react';
 import './calculatorStyle.scss';
-import CalculatorButton from './buttons/CalculatorBtn';
-import Display from './display/Display';
+import calculate from '../../logic/calculate';
+import CalculatorButton from '../buttons/CalculatorBtn';
+import Display from '../display/Display';
 
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentValue: '0',
       numbers: Array.from(Array(10).keys()).reverse(),
       special: ['AC', '+/-', '%'],
-      operators: ['÷', '*', '-', '+', '='],
+      operators: ['÷', 'x', '-', '+', '='],
       decimalDot: '.',
+      currentOp: {
+        total: null,
+        next: null,
+        operation: null,
+      },
     };
     this.clickHandler = this.clickHandler.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState !== this.state) {
+      return true;
+    }
+    return false;
+  }
+
   clickHandler = (e) => {
-    this.setState({ currentValue: e.target.value });
+    this.setCalculatorResult(e.target.value);
+  }
+
+  setCalculatorResult = (value) => {
+    const { currentOp } = this.state;
+    const results = calculate(currentOp, value);
+    this.setState({ currentOp: this.updateCurrentOperation(results) });
+  }
+
+  updateCurrentOperation = ({ next, total, operation }) => {
+    const { currentOp } = this.state;
+    if (total || total === null) {
+      currentOp.total = total;
+    }
+    if (next || next === null) {
+      currentOp.next = next;
+    }
+    if (operation || operation === null) {
+      currentOp.operation = operation;
+    }
+    return currentOp;
   }
 
   render() {
     const {
-      numbers, decimalDot, special, operators, currentValue,
+      numbers, decimalDot, special, operators, currentOp,
     } = this.state;
     const numBtns = numbers.map((num) => (
       <CalculatorButton
@@ -47,7 +79,7 @@ export default class Calculator extends React.Component {
     ));
     return (
       <div className="main-container">
-        <Display number={currentValue} />
+        <Display number={currentOp} />
         <ul className="special-container">
           {specialBtns}
         </ul>
