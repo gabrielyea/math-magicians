@@ -1,27 +1,41 @@
+/* eslint-disable react/prop-types */
 import './displayStyle.scss';
+// import PropTypes from 'prop-types';
 import React from 'react';
 
-// eslint-disable-next-line react/prefer-stateless-function
-export default class Display extends React.Component {
-  setDisplay = (numbers) => {
-    if (numbers.number.next) {
-      return numbers.number.next;
+const Display = (props) => {
+  const { value } = props;
+
+  const setDisplay = () => {
+    if (value.next) {
+      return value.next;
     }
-    if (numbers.number.total) {
-      return numbers.number.total;
+    if (value.total) {
+      return value.total;
     }
     return 0;
-  }
+  };
 
-  render() {
-    const result = (this.setDisplay(this.props));
-    return (
-      <div
-        className="display-container"
-        value={result}
-      >
-        {result}
-      </div>
-    );
-  }
-}
+  const result = setDisplay();
+
+  return (
+    <div
+      className="display-container"
+      value={result}
+    >
+      {result}
+    </div>
+  );
+};
+
+// Display.propTypes = {
+//   next: PropTypes.string,
+//   total: PropTypes.string,
+// };
+
+// Display.defaultProps = {
+//   next: '',
+//   total: '',
+// };
+
+export default Display;
