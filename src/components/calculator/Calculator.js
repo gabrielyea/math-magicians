@@ -40,6 +40,7 @@ export default function Calculator() {
       setOperation({ next, total, operation });
     } catch (error) {
       setOperation({ next: 'error', total: null, operation: null });
+      setDelegate(1);
     }
   };
 
