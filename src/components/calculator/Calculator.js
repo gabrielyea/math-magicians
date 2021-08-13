@@ -4,7 +4,7 @@ import calculate from '../../logic/calculate';
 import CalculatorButton from '../buttons/CalculatorBtn';
 import Display from '../display/Display';
 
-export default function Calculator() {
+const Calculator = () => {
   const [currentOp, setOperation] = useState({ total: 0, next: null, operation: null });
   const [delegate, setDelegate] = useState(0);
 
@@ -80,4 +80,6 @@ export default function Calculator() {
       </ul>
     </div>
   );
-}
+};
+
+export { Calculator as default };
