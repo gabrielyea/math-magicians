@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
 import './displayStyle.scss';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const Display = (props) => {
@@ -28,14 +27,12 @@ const Display = (props) => {
   );
 };
 
-// Display.propTypes = {
-//   next: PropTypes.string,
-//   total: PropTypes.string,
-// };
+Display.propTypes = {
+  value: PropTypes.objectOf(PropTypes.any),
+};
 
-// Display.defaultProps = {
-//   next: '',
-//   total: '',
-// };
+Display.defaultProps = {
+  value: '',
+};
 
 export default Display;
