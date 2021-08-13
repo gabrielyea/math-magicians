@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './calculatorStyle.scss';
 import calculate from '../../logic/calculate';
 import CalculatorButton from '../buttons/CalculatorBtn';
@@ -41,7 +40,6 @@ export default function Calculator() {
       setOperation({ next, total, operation });
     } catch (error) {
       setOperation({ next: 'error', total: null, operation: null });
-      setDelegate(1);
     }
   };
 
