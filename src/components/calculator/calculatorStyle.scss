@@ -31,6 +31,10 @@
     grid-area: dis;
   }
 
+  button:active {
+    background-color: rgba(128, 128, 128, 0.377);
+  }
+
   .special-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -51,8 +55,6 @@
 
     button {
       @include buttonStyle;
-
-      width: 100%;
     }
 
     button.btn-0 {
@@ -71,6 +73,10 @@
 
       background-color: orange;
       color: black;
+
+      &:active {
+        background-color: darkorange;
+      }
     }
   }
 }
