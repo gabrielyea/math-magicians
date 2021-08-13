@@ -13,20 +13,6 @@ const Calculator = () => {
   const operatorKeys = ['÷', 'x', '-', '+', '='];
   const decimalKey = ['.'];
 
-  const updateCurrentOperation = ({ total, next, operation }) => {
-    const op = currentOp;
-    if (total || total === null) {
-      op.total = total;
-    }
-    if (next || next === null) {
-      op.next = next;
-    }
-    if (operation || operation === null) {
-      op.operation = operation;
-    }
-    return op;
-  };
-
   const cleanState = () => {
     setOperation({ next: 0, total: null, operation: null });
     setDelegate(0);
@@ -36,8 +22,7 @@ const Calculator = () => {
     const op = currentOp;
     try {
       const results = calculate(op, value);
-      const { next, total, operation } = updateCurrentOperation(results);
-      setOperation({ next, total, operation });
+      setOperation((state) => ({ ...state, ...results }));
     } catch (error) {
       setOperation({ next: 'error', total: null, operation: null });
       setDelegate(1);
