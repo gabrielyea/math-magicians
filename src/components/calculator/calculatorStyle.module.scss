@@ -8,16 +8,27 @@
   height: 50px;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+
+  h2 {
+    align-self: start;
+    font-size: 2rem;
+  }
+}
+
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0;
   row-gap: 0;
-  margin: auto;
-  margin-top: 100px;
-  padding: 0;
   width: 300px;
-  background-color: white;
+  padding-right: 10rem;
   grid-template-areas:
     'dis dis dis dis'
     'spe spe spe ope'

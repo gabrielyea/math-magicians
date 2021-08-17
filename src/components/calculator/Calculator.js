@@ -52,18 +52,21 @@ const Calculator = () => {
   };
 
   return (
-    <div className={styles.main}>
-      <Display value={currentOp} />
-      <ul className={styles.special}>
-        {createButtons(specialKeys)}
-      </ul>
-      <ul className={styles.numbers}>
-        {createButtons(numberKeys)}
-        {createButtons(decimalKey)}
-      </ul>
-      <ul className={styles.operator}>
-        {createButtons(operatorKeys)}
-      </ul>
+    <div className={styles.container}>
+      <h2>Lets do some Math! </h2>
+      <div className={styles.main}>
+        <Display value={currentOp} />
+        <ul className={styles.special}>
+          {createButtons(specialKeys)}
+        </ul>
+        <ul className={styles.numbers}>
+          {createButtons(numberKeys)}
+          {createButtons(decimalKey)}
+        </ul>
+        <ul className={styles.operator}>
+          {createButtons(operatorKeys)}
+        </ul>
+      </div>
     </div>
   );
 };
