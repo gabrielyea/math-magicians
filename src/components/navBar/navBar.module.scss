@@ -1,16 +1,24 @@
 .navBar {
   display: flex;
   justify-content: space-between;
+  padding: 0 1rem;
+
+  h1 {
+    font-size: 4rem;
+  }
 
   ul {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 
     li {
       padding-right: 1rem;
       border-right: solid black 1px;
+      font-size: 1rem;
     }
   }
 }
