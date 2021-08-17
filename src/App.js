@@ -1,12 +1,11 @@
 import React from 'react';
-import Calculator from './components/calculator/Calculator';
-import NavBar from './components/navBar/NavBar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Home from './pages/Home';
 
 const App = () => (
-  <div className="App">
-    <NavBar />
-    <Calculator />
-  </div>
+  <Router basename={process.env.PUBLIC_URL}>
+    <Home />
+  </Router>
 );
 
 export default App;
