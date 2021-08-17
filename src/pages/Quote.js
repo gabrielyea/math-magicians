@@ -1,6 +1,8 @@
+import './pages.scss';
+
 const Qoute = () => (
-  <div className="qoute">
-    <p>This is a qoute</p>
+  <div className="quote">
+    <p>This is an inspirational qoute, be inspired</p>
   </div>
 );
 
