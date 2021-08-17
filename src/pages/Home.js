@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Calculator from '../components/calculator/Calculator';
 import NavBar from '../components/navBar/NavBar';
+import NotMatch from './NoMatch';
 import Quote from './Quote';
 
 const Home = () => (
@@ -27,9 +28,9 @@ const Home = () => (
       <Route path="/quote">
         <Quote />
       </Route>
-      {/* <Route path="*">
+      <Route path="*">
         <NotMatch />
-      </Route> */}
+      </Route>
     </Switch>
   </>
 );
