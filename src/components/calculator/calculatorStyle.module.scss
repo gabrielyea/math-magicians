@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin buttonStyle {
+  border: 1px solid rgba(156, 156, 156, 0.288);
+  height: 50px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+  row-gap: 0;
+  margin: auto;
+  margin-top: 100px;
+  padding: 0;
+  width: 300px;
+  background-color: white;
+  grid-template-areas:
+    'dis dis dis dis'
+    'spe spe spe ope'
+    'num num num ope'
+    'num num num ope'
+    'num num num ope'
+    'dot zero zero ope';
+
+  button:active {
+    background-color: rgba(128, 128, 128, 0.377);
+  }
+
+  .special {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: spe;
+
+    button {
+      @include buttonStyle;
+    }
+  }
+
+  .numbers {
+    display: grid;
+    direction: rtl;
+    list-style: none;
+    grid-area: num;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'dot zero zero ';
+
+    button {
+      @include buttonStyle;
+    }
+  }
+
+  .operator {
+    display: grid;
+    grid-area: ope;
+    height: 50px;
+
+    button {
+      @include buttonStyle;
+
+      background-color: orange;
+      color: black;
+
+      &:active {
+        background-color: darkorange;
+      }
+    }
+  }
+
+  .hello {
+    background-color: green;
+  }
+}

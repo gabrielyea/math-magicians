@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './calculatorStyle.scss';
+import styles from './calculatorStyle.module.scss';
 import calculate from '../../logic/calculate';
 import CalculatorButton from '../buttons/CalculatorBtn';
 import Display from '../display/Display';
@@ -42,6 +42,7 @@ const Calculator = () => {
   const createButtons = (buttonCollection) => {
     const btns = buttonCollection.map((num) => (
       <CalculatorButton
+        name={`btn-${num}`}
         key={num}
         number={num.toString()}
         clickHandler={clickHandler}
@@ -51,16 +52,16 @@ const Calculator = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className={styles.main}>
       <Display value={currentOp} />
-      <ul className="special-container">
+      <ul className={styles.special}>
         {createButtons(specialKeys)}
       </ul>
-      <ul className="numbers-container">
+      <ul className={styles.numbers}>
         {createButtons(numberKeys)}
         {createButtons(decimalKey)}
       </ul>
-      <ul className="operator-container">
+      <ul className={styles.operator}>
         {createButtons(operatorKeys)}
       </ul>
     </div>
