@@ -5,7 +5,7 @@
 
 @mixin buttonStyle {
   border: 1px solid rgba(156, 156, 156, 0.288);
-  height: 50px;
+  height: 100px;
 }
 
 .container {
@@ -27,7 +27,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0;
   row-gap: 0;
-  width: 300px;
+  width: 600px;
   padding-right: 10rem;
   grid-template-areas:
     'dis dis dis dis'
