@@ -1,0 +1,4 @@
+@mixin setColors($front, $back) {
+  color: $front;
+  background-color: $back;
+}
