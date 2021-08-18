@@ -1,6 +1,3 @@
-/* eslint-disable arrow-body-style */
-// eslint-disable-next-line no-unused-vars
-import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './navBar.module.scss';
@@ -24,27 +21,25 @@ const NavBar = () => {
     },
   ];
 
-  const createLinks = () => {
-    return links.map((link) => (
-      <li key={link.id}>
-        <NavLink
-          to={link.path}
-          activeClassName="active-link"
-          exact
-        >
-          {link.text}
-        </NavLink>
-      </li>
-    ));
-  };
+  const createLinks = () => links.map((link) => (
+    <li key={link.id}>
+      <NavLink
+        to={link.path}
+        activeClassName="active-link"
+        exact
+      >
+        {link.text}
+      </NavLink>
+    </li>
+  ));
 
   return (
-    <section className={styles.navBar}>
-      <h1>Math Magicians</h1>
+    <nav className={styles.navBar}>
+      <div className="logo"><h1>Math Magicians</h1></div>
       <ul>
         {createLinks()}
       </ul>
-    </section>
+    </nav>
   );
 };
 

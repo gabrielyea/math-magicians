@@ -1,6 +1,15 @@
+@use '/src/utils/'as *;
+
 * {
   padding: 0;
   margin: 0;
+  font-family: $main-font;
+}
+
+body {
+  $color: get-color(da1);
+
+  background-color: $color;
 }
 
 @mixin buttonStyle {
@@ -9,16 +18,17 @@
 }
 
 .container {
+  @include setColors(get-color(li1), get-color(da1));
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
   padding: 1rem;
 
   h2 {
     align-self: start;
-    font-size: 2rem;
+    font-size: 4rem;
   }
 }
 
@@ -27,8 +37,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0;
   row-gap: 0;
-  width: 600px;
-  padding-right: 10rem;
+  width: 1000px;
   grid-template-areas:
     'dis dis dis dis'
     'spe spe spe ope'
@@ -37,18 +46,21 @@
     'num num num ope'
     'dot zero zero ope';
 
-  button:active {
-    background-color: rgba(128, 128, 128, 0.377);
+  button {
+    @include buttonStyle;
+    @include setColors(get-color(da1), get-color(li1));
+
+    &:active {
+      @include setColors(get-color(li1), get-color(da1));
+    }
   }
 
   .special {
+    @include setColors(get-color(li3), get-color(da3));
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-area: spe;
-
-    button {
-      @include buttonStyle;
-    }
   }
 
   .numbers {
@@ -58,10 +70,6 @@
     grid-area: num;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'dot zero zero ';
-
-    button {
-      @include buttonStyle;
-    }
   }
 
   .operator {
@@ -71,17 +79,11 @@
 
     button {
       @include buttonStyle;
-
-      background-color: orange;
-      color: black;
+      @include setColors(get-color(da1), get-color(li2));
 
       &:active {
-        background-color: darkorange;
+        @include setColors(get-color(li1), get-color(li3));
       }
     }
-  }
-
-  .hello {
-    background-color: green;
   }
 }

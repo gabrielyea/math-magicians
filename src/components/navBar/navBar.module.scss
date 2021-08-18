@@ -1,7 +1,13 @@
+@use '/src/utils/' as *;
+
 .navBar {
+  @include setColors(get-color(li2), get-color(da2));
+
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
+  height: 10rem;
+  align-items: center;
 
   h1 {
     font-size: 4rem;
@@ -18,7 +24,26 @@
     li {
       padding-right: 1rem;
       border-right: solid black 1px;
-      font-size: 1rem;
+      font-size: 2rem;
+      text-align: center;
+
+      a:link {
+        $color: get-color(da3);
+
+        color: $color;
+      }
+
+      a:visited {
+        $color: get-color(li3);
+
+        color: $color;
+      }
+
+      a:hover {
+        $color: get-color(li2);
+
+        color: $color;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@ import './pages.scss';
 
 const Qoute = () => (
   <div className="quote">
-    <p>This is an inspirational qoute, be inspired</p>
+    <p>This is an inspirational qoute, be inspired...</p>
   </div>
 );
 
