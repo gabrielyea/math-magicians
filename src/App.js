@@ -1,10 +1,8 @@
 import React from 'react';
-import Calculator from './components/calculator/Calculator';
+import Home from './pages/Home';
 
 const App = () => (
-  <div className="App">
-    <Calculator />
-  </div>
+  <Home />
 );
 
 export default App;

@@ -1,6 +1,7 @@
-import './displayStyle.scss';
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './displayStyle.module.scss';
 
 const Display = (props) => {
   const { value } = props;
@@ -19,7 +20,7 @@ const Display = (props) => {
 
   return (
     <div
-      className="display-container"
+      className={styles.container}
       value={result}
     >
       {result}

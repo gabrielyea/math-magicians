@@ -1,11 +1,16 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './buttonStyle.module.scss';
 
 const CalculatorButton = (props) => {
-  const { number, clickHandler } = props;
+  const {
+    number, clickHandler, name,
+  } = props;
+
   return (
     <button
-      className={`btn-${number}`}
+      className={styles[name]}
       onClick={clickHandler}
       type="button"
       value={number}
@@ -17,6 +22,7 @@ const CalculatorButton = (props) => {
 
 CalculatorButton.propTypes = {
   number: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   clickHandler: PropTypes.func.isRequired,
 };
 

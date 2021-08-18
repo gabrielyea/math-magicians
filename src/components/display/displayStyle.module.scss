@@ -1,0 +1,17 @@
+@use '/src/utils/' as *;
+
+div {
+  .container {
+    @include setColors(get-color(da1), get-color(da3));
+
+    font-family: $main-font;
+    display: grid;
+    grid-area: dis;
+    justify-content: end;
+    align-items: center;
+    height: 100px;
+    font-size: 2rem;
+    padding: 0 1rem;
+    max-width: 1000px;
+  }
+}

@@ -1,0 +1,89 @@
+@use '/src/utils/'as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $main-font;
+}
+
+body {
+  $color: get-color(da1);
+
+  background-color: $color;
+}
+
+@mixin buttonStyle {
+  border: 1px solid rgba(156, 156, 156, 0.288);
+  height: 100px;
+}
+
+.container {
+  @include setColors(get-color(li1), get-color(da1));
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  h2 {
+    align-self: start;
+    font-size: 4rem;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+  row-gap: 0;
+  width: 1000px;
+  grid-template-areas:
+    'dis dis dis dis'
+    'spe spe spe ope'
+    'num num num ope'
+    'num num num ope'
+    'num num num ope'
+    'dot zero zero ope';
+
+  button {
+    @include buttonStyle;
+    @include setColors(get-color(da1), get-color(li1));
+
+    &:active {
+      @include setColors(get-color(li1), get-color(da1));
+    }
+  }
+
+  .special {
+    @include setColors(get-color(li3), get-color(da3));
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: spe;
+  }
+
+  .numbers {
+    display: grid;
+    direction: rtl;
+    list-style: none;
+    grid-area: num;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'dot zero zero ';
+  }
+
+  .operator {
+    display: grid;
+    grid-area: ope;
+    height: 50px;
+
+    button {
+      @include buttonStyle;
+      @include setColors(get-color(da1), get-color(li2));
+
+      &:active {
+        @include setColors(get-color(li1), get-color(li3));
+      }
+    }
+  }
+}
