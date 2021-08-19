@@ -6,6 +6,11 @@
 # React Math magicians.
 > Math magicians is a simple calculator app that allows us to do 
 basic math operations.
+The application also connects to a Jokes API and diplays a random joke!
+
+<p align="center">
+  <img src="./src/pages/home/calculator-animation.png" width="50%" height="50%"/>
+</p>
 
 ## Screenshots
 ![img](./misc/screenshot.png)
