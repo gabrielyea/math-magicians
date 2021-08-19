@@ -14,3 +14,9 @@ $theme-colors: (li1:#f4f4f4 , li2:#ffcd75   , li3:#ef7d57  ,da1:#1a1c2c , da2:#3
 @function get-color($themeName) {
   @return map.get($theme-colors, $themeName);
 }
+
+@mixin customBorder() {
+  border: solid transparent; // need this to work on chorme!!!
+  border-image-slice: 30;
+  border-image-width: 32px 32px;
+}

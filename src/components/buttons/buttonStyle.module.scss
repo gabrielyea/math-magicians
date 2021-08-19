@@ -1,8 +1,17 @@
+@use '../../utils/utils' as *;
+
 .btn-0 {
   grid-area: zero;
   grid-row: 4;
+  width: 80%;
 }
 
 button {
+  border-radius: 4px;
   font-size: 2rem;
+  margin: 10px;
+  height: 80px;
+  width: 150px;
+  border-bottom: #566c86 solid 10px;
+  border-right: #566c86 solid 10px;
 }
