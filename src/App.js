@@ -11,7 +11,7 @@ import Quote from './pages/Quote';
 import Home from './pages/home/Home';
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <NavBar />
     <Switch>
       <Route exact path="/">
