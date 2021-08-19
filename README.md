@@ -7,6 +7,8 @@
 > Math magicians is a simple calculator app that allows us to do 
 basic math operations.
 
+## Screenshots
+![img](./misc/screenshot.png)
 ## Live Demo
 You can see my page live here: 
 - [Check it out!](https://gabrielyea.github.io/math-magicians/)
