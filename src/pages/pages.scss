@@ -1,22 +1,15 @@
 @use '/src/utils/'as *;
 
-.home {
-  padding: 0 1rem;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $main-font;
+}
 
-  h2 {
-    $color: get-color(li1);
+body {
+  $color: get-color(da1);
 
-    color: $color;
-    font-size: 4rem;
-    margin: 1rem 0;
-  }
-
-  p {
-    $color: get-color(li1);
-
-    color: $color;
-    font-size: 4rem;
-  }
+  background-color: $color;
 }
 
 .quote {

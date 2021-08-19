@@ -2,7 +2,7 @@
 
 div {
   .container {
-    @include setColors(get-color(da1), get-color(da3));
+    @include setColors(#a7f070, #566c86);
 
     font-family: $main-font;
     display: grid;

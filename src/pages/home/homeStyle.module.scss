@@ -1,0 +1,27 @@
+@use '../../utils/utils' as *;
+
+.home {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .back-img {
+    background-image: url('./calculator-animation.png');
+    height: 800px;
+    background-repeat: no-repeat;
+  }
+
+  .welcome-section {
+    @include setColors(get-color(li1), '');
+
+    margin: auto;
+
+    h2 {
+      font-size: 5rem;
+    }
+
+    p {
+      font-size: 4rem;
+    }
+  }
+}
