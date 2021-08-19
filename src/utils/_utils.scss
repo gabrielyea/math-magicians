@@ -9,7 +9,7 @@ $main-font:'Nunito', sans-serif;
   background-color: $back;
 }
 
-$theme-colors: (li1:#f5efeb, li2:#f6ad0f , li3:#d3473d ,da1:#2e243f , da2:#316a96 , da3:#86bcd1);
+$theme-colors: (li1:#f4f4f4 , li2:#ffcd75   , li3:#ef7d57  ,da1:#1a1c2c , da2:#38b764  , da3:#86bcd1);
 
 @function get-color($themeName) {
   @return map.get($theme-colors, $themeName);

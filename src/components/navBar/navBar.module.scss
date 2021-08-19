@@ -1,7 +1,7 @@
 @use '/src/utils/' as *;
 
 .navBar {
-  @include setColors(get-color(li2), get-color(da2));
+  @include setColors(get-color(li1), get-color(da2));
 
   display: flex;
   justify-content: space-between;
@@ -11,32 +11,38 @@
 
   h1 {
     font-size: 4rem;
+    text-shadow: #566c86  4px 4px;
+    padding-left: 4rem;
   }
 
   ul {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    padding-right: 4rem;
+    gap: 4rem;
     list-style: none;
     justify-content: center;
     align-items: center;
 
     li {
-      padding-right: 1rem;
-      border-right: solid black 1px;
       font-size: 2rem;
       text-align: center;
 
+      a {
+        text-shadow: #566c86 2px 2px;
+        text-decoration: none;
+      }
+
       a:link {
-        $color: get-color(da3);
+        $color: get-color(li1);
 
         color: $color;
       }
 
       a:visited {
-        $color: get-color(li3);
+        $color: get-color(li1);
 
-        color: $color;
+        color: #3b5dc9;
       }
 
       a:hover {

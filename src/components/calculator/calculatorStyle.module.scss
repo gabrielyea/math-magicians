@@ -1,17 +1,5 @@
 @use '/src/utils/'as *;
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: $main-font;
-}
-
-body {
-  $color: get-color(da1);
-
-  background-color: $color;
-}
-
 @mixin buttonStyle {
   border: 1px solid rgba(156, 156, 156, 0.288);
   height: 100px;
@@ -20,15 +8,13 @@ body {
 .container {
   @include setColors(get-color(li1), get-color(da1));
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
 
   h2 {
     align-self: start;
     font-size: 4rem;
+    margin: auto;
   }
 }
 
@@ -38,6 +24,8 @@ body {
   gap: 0;
   row-gap: 0;
   width: 1000px;
+  margin: auto;
+  border-radius: 4px;
   grid-template-areas:
     'dis dis dis dis'
     'spe spe spe ope'
@@ -48,16 +36,14 @@ body {
 
   button {
     @include buttonStyle;
-    @include setColors(get-color(da1), get-color(li1));
+    @include setColors(#94b0c2, #f4f4f4);
 
     &:active {
-      @include setColors(get-color(li1), get-color(da1));
+      @include setColors(#566c86 , #94b0c2);
     }
   }
 
   .special {
-    @include setColors(get-color(li3), get-color(da3));
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-area: spe;
@@ -79,10 +65,10 @@ body {
 
     button {
       @include buttonStyle;
-      @include setColors(get-color(da1), get-color(li2));
+      @include setColors(#f4f4f4, #ef7d57);
 
       &:active {
-        @include setColors(get-color(li1), get-color(li3));
+        @include setColors(#94b0c2, #b13e53);
       }
     }
   }
