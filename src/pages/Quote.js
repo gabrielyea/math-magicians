@@ -2,8 +2,10 @@
 /* eslint-disable prefer-const */
 import './pages.scss';
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { access } from '../api/api-access';
 import routes from '../api/api-routes';
+import variants from '../components/animations/AnimationVariants';
 
 const Qoute = () => {
   const [joke, setJoke] = useState();
@@ -18,8 +20,9 @@ const Qoute = () => {
   }, []);
 
   return (
-    <div className="quote">
-      {joke && (
+    <motion.div initial="initial" animate="animate" exit="exit" variants={variants}>
+      <div className="quote">
+        {joke && (
         <div>
           <p>
             {joke.setup}
@@ -28,8 +31,9 @@ const Qoute = () => {
             {joke.punchline}
           </p>
         </div>
-      )}
-    </div>
+        )}
+      </div>
+    </motion.div>
   );
 };
 
