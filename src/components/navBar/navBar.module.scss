@@ -29,26 +29,25 @@
       text-align: center;
 
       a {
-        text-shadow: #566c86 2px 2px;
+        font-size: 1.5rem;
         text-decoration: none;
-      }
 
-      a:link {
-        $color: get-color(li1);
+        &.link {
+          button {
+            @include setColors(#f4f4f4, #94b0c2);
 
-        color: $color;
-      }
+            font-size: 1em;
+          }
+        }
 
-      a:visited {
-        $color: get-color(li1);
+        &.active {
+          button {
+            @include setColors(#f4f4f4, #ef7d57);
 
-        color: #3b5dc9;
-      }
-
-      a:hover {
-        $color: get-color(li2);
-
-        color: $color;
+            border-bottom: #b13e53 solid 10px;
+            border-right: #b13e53 solid 10px;
+          }
+        }
       }
     }
   }

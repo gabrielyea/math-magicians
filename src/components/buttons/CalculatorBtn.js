@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './buttonStyle.module.scss';
@@ -9,14 +10,15 @@ const CalculatorButton = (props) => {
   } = props;
 
   return (
-    <button
+    <motion.button
       className={styles[name]}
       onClick={clickHandler}
-      type="button"
       value={number}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       {number}
-    </button>
+    </motion.button>
   );
 };
 

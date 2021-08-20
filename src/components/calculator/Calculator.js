@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './calculatorStyle.module.scss';
 import calculate from '../../logic/calculate';
 import CalculatorButton from '../buttons/CalculatorBtn';
 import Display from '../display/Display';
+import variants from '../animations/AnimationVariants';
 
 const Calculator = () => {
   const [currentOp, setOperation] = useState({ total: 0, next: null, operation: null });
@@ -52,22 +54,24 @@ const Calculator = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2>Lets do some Math! </h2>
-      <div className={styles.main}>
-        <Display value={currentOp} />
-        <ul className={styles.special}>
-          {createButtons(specialKeys)}
-        </ul>
-        <ul className={styles.numbers}>
-          {createButtons(numberKeys)}
-          {createButtons(decimalKey)}
-        </ul>
-        <ul className={styles.operator}>
-          {createButtons(operatorKeys)}
-        </ul>
+    <motion.div initial="initial" animate="animate" exit="exit" variants={variants}>
+      <div className={styles.container}>
+        <h2>Lets do some Math! </h2>
+        <div className={styles.main}>
+          <Display value={currentOp} />
+          <ul className={styles.special}>
+            {createButtons(specialKeys)}
+          </ul>
+          <ul className={styles.numbers}>
+            {createButtons(numberKeys)}
+            {createButtons(decimalKey)}
+          </ul>
+          <ul className={styles.operator}>
+            {createButtons(operatorKeys)}
+          </ul>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
