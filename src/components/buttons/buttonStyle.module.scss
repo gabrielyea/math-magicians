@@ -1,4 +1,4 @@
-@use '../../utils/utils' as *;
+@use '../../utils/utils'as *;
 
 .btn-0 {
   grid-area: zero;
@@ -8,10 +8,28 @@
 
 button {
   border-radius: 4px;
-  font-size: 2rem;
-  margin: 10px;
-  height: 80px;
-  width: 150px;
-  border-bottom: #566c86 solid 10px;
-  border-right: #566c86 solid 10px;
+  font-size: 1rem;
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  border-bottom: #566c86 solid 5px;
+  border-right: #566c86 solid 5px;
+}
+
+@include desktopResolution {
+  .btn-0 {
+    grid-area: zero;
+    grid-row: 4;
+    width: 80%;
+  }
+
+  button {
+    border-radius: 4px;
+    font-size: 2rem;
+    margin: 10px;
+    height: 80px;
+    width: 150px;
+    border-bottom: #566c86 solid 5px;
+    border-right: #566c86 solid 5px;
+  }
 }
