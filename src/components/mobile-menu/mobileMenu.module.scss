@@ -1,0 +1,47 @@
+nav {
+  position: relative;
+
+  .mobileMenu {
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #1a1c2c;
+      z-index: 1;
+    }
+
+    .mobileBtn {
+      position: relative;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: transparent;
+      border: none;
+      z-index: 2;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    p {
+      font-size: 4rem;
+      text-shadow: gray 2px 2px;
+    }
+
+    .close {
+      color: #f4f4f4;
+    }
+
+    .open {
+      color: #ffcd75;
+    }
+  }
+}

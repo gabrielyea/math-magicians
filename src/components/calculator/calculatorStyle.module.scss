@@ -10,10 +10,11 @@
 
   display: grid;
   grid-template-columns: 1fr;
+  gap: 50px;
 
   h2 {
     align-self: start;
-    font-size: 4rem;
+    font-size: 2rem;
     margin: auto;
   }
 }
@@ -21,11 +22,11 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 1000px;
+  width: 90vw;
   margin: auto;
   background-color: #f4f4f4;
-  border-right: #566c86 solid 20px;
-  border-bottom: #566c86 solid 20px;
+  border-right: #566c86 solid 5px;
+  border-bottom: #566c86 solid 5px;
   border-radius: 4px;
   grid-template-areas:
     'dis dis dis dis'
@@ -43,7 +44,7 @@
       border-top: #94b0c2 solid 5px;
       border-left: #94b0c2 solid 5px;
 
-      @include setColors(#94b0c2 , #566c86);
+      @include setColors(#94b0c2, #566c86);
     }
   }
 
@@ -66,7 +67,7 @@
   .operator {
     display: grid;
     grid-area: ope;
-    margin: 0 50px;
+    margin: 0 20px;
 
     button {
       @include buttonStyle;
@@ -81,6 +82,26 @@
         border-top: #ef7d57 solid 5px;
         border-left: #ef7d57 solid 5px;
       }
+    }
+  }
+}
+
+@include desktopResolution {
+  .container {
+    @include setColors(get-color(li1), get-color(da1));
+
+    h2 {
+      font-size: 4rem;
+    }
+  }
+
+  .main {
+    width: 1000px;
+
+    .operator {
+      display: grid;
+      grid-area: ope;
+      margin: 0 50px;
     }
   }
 }
