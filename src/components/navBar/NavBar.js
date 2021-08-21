@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import Media from 'react-media';
 import { NavLink } from 'react-router-dom';
 import styles from './navBar.module.scss';
+import MobileMenu from '../mobile-menu/MobileMenu';
 
 const NavBar = () => {
   const links = [
@@ -22,37 +24,72 @@ const NavBar = () => {
     },
   ];
 
-  // const clickHandle = () => {
+  const variants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  };
 
-  // };
-
-  const createLinks = () => links.map((link) => (
-    <li key={link.id}>
+  const createLinks = (linkCollection) => linkCollection.map((link) => (
+    <motion.li
+      key={link.id}
+    >
 
       <NavLink
         to={link.path}
         className={styles.link}
         activeClassName={styles.active}
         exact
-        onClick={link.clickHande}
       >
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
+
           {link.text}
         </motion.button>
       </NavLink>
-    </li>
+    </motion.li>
   ));
 
   return (
-    <nav className={styles.navBar}>
-      <div className="logo"><h1>Math Magicians</h1></div>
-      <ul>
-        {createLinks()}
-      </ul>
-    </nav>
+    <>
+      <Media queries={{
+        small: '(max-width: 599px)',
+        medium: '(min-width: 600px) and (max-width: 1980px)',
+        large: '(min-width: 1200px)',
+      }}
+      >
+        {(matches) => (
+          <>
+            {matches.small
+            && (
+            <nav className={styles.navBar}>
+              <MobileMenu
+                variants={variants}
+                createLinksFunc={createLinks}
+                links={links}
+              />
+            </nav>
+            )}
+            {matches.medium
+            && (
+            <nav className={styles.navBar}>
+              <div className="logo"><h1>Math Magicians</h1></div>
+              <motion.ul
+                variants={variants}
+              >
+                {createLinks(links)}
+              </motion.ul>
+            </nav>
+            )}
+          </>
+        )}
+      </Media>
+    </>
   );
 };
 
