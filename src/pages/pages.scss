@@ -21,7 +21,29 @@ body {
     $color: get-color(li1);
 
     color: $color;
-    font-size: 4rem;
-    padding: 5rem;
+    font-size: 2rem;
+    padding: 2rem;
+  }
+}
+
+@include desktopResolution {
+  body {
+    $color: get-color(da1);
+
+    background-color: $color;
+  }
+
+  .quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      $color: get-color(li1);
+
+      color: $color;
+      font-size: 4rem;
+      padding: 5rem;
+    }
   }
 }

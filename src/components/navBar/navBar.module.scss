@@ -14,10 +14,6 @@
     text-shadow: #566c86 4px 4px;
     padding-left: 1rem;
   }
-
-  ul {
-    display: none;
-  }
 }
 
 @include desktopResolution() {
