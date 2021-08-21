@@ -1,51 +1,65 @@
-@use '/src/utils/' as *;
+@use '/src/utils/'as *;
 
 .navBar {
   @include setColors(get-color(li1), get-color(da2));
 
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
   height: 10rem;
   align-items: center;
 
   h1 {
-    font-size: 4rem;
-    text-shadow: #566c86  4px 4px;
-    padding-left: 4rem;
+    font-size: 2rem;
+    text-shadow: #566c86 4px 4px;
+    padding-left: 1rem;
   }
 
   ul {
-    display: flex;
-    flex-direction: row;
-    padding-right: 4rem;
-    gap: 4rem;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
+    display: none;
+  }
+}
 
-    li {
-      font-size: 2rem;
-      text-align: center;
+@include desktopResolution() {
+  .navBar {
+    h1 {
+      font-size: 4rem;
+      text-shadow: #566c86 4px 4px;
+      padding-left: 4rem;
+    }
 
-      a {
-        font-size: 1.5rem;
-        text-decoration: none;
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding-right: 4rem;
+      gap: 4rem;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
 
-        &.link {
-          button {
-            @include setColors(#f4f4f4, #94b0c2);
+      li {
+        font-size: 2rem;
+        text-align: center;
 
-            font-size: 1em;
+        a {
+          font-size: 1.5rem;
+          text-decoration: none;
+
+          &.link {
+            button {
+              @include setColors(#f4f4f4, #94b0c2);
+
+              font-size: 1em;
+            }
           }
-        }
 
-        &.active {
-          button {
-            @include setColors(#f4f4f4, #ef7d57);
+          &.active {
+            button {
+              @include setColors(#f4f4f4, #ef7d57);
 
-            border-bottom: #b13e53 solid 10px;
-            border-right: #b13e53 solid 10px;
+              border-bottom: #b13e53 solid 10px;
+              border-right: #b13e53 solid 10px;
+            }
           }
         }
       }

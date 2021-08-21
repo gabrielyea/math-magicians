@@ -3,12 +3,14 @@
 .home {
   padding: 0 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
 
   .back-img {
     background-image: url('./calculator-animation.png');
-    height: 800px;
+    height: 400px;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
 
   .welcome-section {
@@ -17,11 +19,39 @@
     margin: auto;
 
     h2 {
-      font-size: 5rem;
+      font-size: 2rem;
     }
 
     p {
-      font-size: 4rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+@include desktopResolution() {
+  .home {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+
+    .back-img {
+      background-image: url('./calculator-animation.png');
+      height: 800px;
+      background-repeat: no-repeat;
+    }
+
+    .welcome-section {
+      @include setColors(get-color(li1), '');
+
+      margin: auto;
+
+      h2 {
+        font-size: 5rem;
+      }
+
+      p {
+        font-size: 4rem;
+      }
     }
   }
 }
